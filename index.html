@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RUTARI — мужской барбершоп в Усть-Каменогорске</title>
+<meta name="description" content="Мужские стрижки, фейды и борода. Усть-Каменогорск, Оралхан Бокей, 21. Ежедневно 10:00–18:00. Запись онлайн.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#141414;--surface:#1d1d1d;--line:#2e2e2e;--text:#ece7dd;--muted:#9b968c;--accent:#c9a46a;--r:16px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{background:var(--bg);color:var(--text);font:400 16px/1.5 Onest,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+.wrap{padding:0 24px;max-width:1200px;margin:0 auto}
+section{padding:80px 0}
+h2{font-size:clamp(40px,9vw,72px);line-height:1;font-weight:800;letter-spacing:-.03em;margin-bottom:16px}
+.lead{color:var(--muted);max-width:480px;margin-bottom:48px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 24px;border-radius:8px;background:var(--text);color:var(--bg);font:700 16px Onest,sans-serif;text-decoration:none;border:0;cursor:pointer}
+.btn:hover{background:var(--accent)}
+.btn.ghost{background:transparent;color:var(--text);box-shadow:inset 0 0 0 1px var(--line)}
+.btn.ghost:hover{box-shadow:inset 0 0 0 1px var(--accent);color:var(--accent)}
+.btn.accent{background:var(--accent)}
+.btn.accent:hover{background:var(--text)}
+
+header{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-weight:800;letter-spacing:.04em;text-decoration:none}
+header .btn{min-height:40px;padding:0 16px;font-size:14px}
+nav{display:none}
+
+.hero{position:relative;overflow:hidden;min-height:calc(100svh - 64px);display:flex;flex-direction:column;justify-content:flex-end;padding:48px 0 64px}
+.hero::before{content:"";position:absolute;inset:0;background:url(images/work-6.jpg) 50% 30%/cover no-repeat;opacity:.3;filter:grayscale(1);-webkit-mask-image:linear-gradient(to bottom,#000 30%,transparent 95%);mask-image:linear-gradient(to bottom,#000 30%,transparent 95%)}
+.hero .wrap{position:relative;width:100%}
+.hero h1{font-size:clamp(72px,26vw,360px);line-height:.82;font-weight:800;letter-spacing:-.06em;margin:0 -4px 32px}
+.hero .where{font-size:20px;font-weight:500;max-width:360px;margin-bottom:48px}
+.hero .where span{display:block;color:var(--muted);font-size:16px;font-weight:400;margin-top:8px}
+.buy{display:flex;flex-direction:column;gap:24px}
+.price{font-size:32px;font-weight:800;line-height:1.1}
+.price small{display:block;font-size:16px;font-weight:400;color:var(--muted);margin-bottom:8px}
+
+.row{display:grid;grid-template-columns:1fr auto;gap:8px 24px;padding:24px 0;border-top:1px solid var(--line);align-items:baseline}
+.row:last-child{border-bottom:1px solid var(--line)}
+.row b{font-size:20px;font-weight:700}
+.row .t{grid-column:1;color:var(--muted);font-size:14px}
+.row .p{grid-column:2;grid-row:1/3;align-self:center;font-size:20px;font-weight:700;color:var(--accent);white-space:nowrap}
+
+.masters{display:grid;gap:48px}
+.m{display:grid;grid-template-columns:120px 1fr;gap:8px 24px;align-items:start}
+.m .ph{grid-row:1/4;aspect-ratio:3/4;border-radius:var(--r);background:var(--surface);display:flex;align-items:center;justify-content:center;font-size:48px;font-weight:800;color:var(--muted)}
+.m h3{font-size:24px;line-height:1.2}
+.m p{color:var(--muted);font-size:14px}
+.m .btn{margin-top:16px;justify-self:start;min-height:40px;padding:0 16px;font-size:14px}
+
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.grid>*{border-radius:8px;overflow:hidden;aspect-ratio:4/5;background:var(--surface)}
+.grid>:first-child{grid-column:1/3;aspect-ratio:16/10}
+.grid img{width:100%;height:100%;object-fit:cover}
+
+.rev{display:grid;gap:0}
+.rev blockquote{padding:32px 0;border-top:1px solid var(--line);font-size:20px;line-height:1.4}
+.rev cite{display:block;margin-top:16px;font-size:14px;font-style:normal;color:var(--muted)}
+.draft{margin-top:24px;font-size:14px;color:var(--accent)}
+.more{margin-top:32px}
+
+.way dl{display:grid;gap:24px;margin-bottom:32px}
+.way dt{color:var(--muted);font-size:14px;margin-bottom:4px}
+.way dd{font-size:24px;font-weight:700;line-height:1.25}
+.way dd a{text-decoration:none}
+.acts{display:flex;flex-direction:column;gap:8px}
+
+.book{background:var(--surface)}
+form{display:grid;gap:16px;max-width:480px;margin-top:32px}
+label{display:grid;gap:8px;font-size:14px;color:var(--muted)}
+input[type=text],input[type=tel]{height:56px;padding:0 16px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--text);font:400 18px Onest,sans-serif}
+select{height:56px;padding:0 48px 0 16px;border-radius:8px;border:1px solid var(--line);background:var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%23c9a46a' stroke-width='2'%3E%3Cpath d='M2 5l6 6 6-6'/%3E%3C/svg%3E") no-repeat right 16px center;color:var(--text);font:400 18px Onest,sans-serif;appearance:none;-webkit-appearance:none}
+input:focus,select:focus{border-color:var(--accent);outline:0}
+.hp{position:absolute;left:-9999px}
+.agree{display:flex;gap:16px;align-items:flex-start;font-size:14px;line-height:1.5}
+.agree input{width:24px;height:24px;flex:none;accent-color:var(--accent);margin-top:0}
+.agree a{color:var(--text)}
+.msg{min-height:24px;font-size:16px}
+.msg.ok{color:var(--accent)}.msg.err{color:#e58b7a}
+.or{margin:32px 0 16px;color:var(--muted)}
+footer{padding:32px 0;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+
+@media(min-width:768px){
+ section{padding:128px 0}
+ .wrap{padding:0 48px}
+ nav{display:flex;gap:32px;font-size:14px}
+ nav a{text-decoration:none;color:var(--muted)}nav a:hover{color:var(--text)}
+ .hero{padding:64px 0 96px}
+ .buy{flex-direction:row;align-items:center;gap:48px}
+ .hero::before{inset:0 0 0 auto;width:55%;-webkit-mask-image:linear-gradient(to left,#000 35%,transparent);mask-image:linear-gradient(to left,#000 35%,transparent)}
+ .hero .top{display:flex;justify-content:space-between;align-items:flex-end}
+ .row{grid-template-columns:2fr 1fr 1fr;align-items:center}
+ .row .t{grid-column:2;font-size:16px}.row .p{grid-column:3;grid-row:1;text-align:right}
+ .masters{grid-template-columns:repeat(3,1fr);gap:32px}
+ .m{grid-template-columns:1fr}.m .ph{grid-row:auto;aspect-ratio:4/5}
+ .grid{grid-template-columns:repeat(4,1fr);gap:16px}
+ .grid>:first-child{grid-column:span 2;grid-row:span 2;aspect-ratio:auto}
+ .rev{grid-template-columns:1fr 1fr;column-gap:48px}
+ .way .wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+ .acts{flex-direction:row}
+ .book .wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+}
+</style>
+</head>
+<body>
+
+<header>
+ <div class="wrap">
+  <a class="logo" href="#top">RUTARI</a>
+  <nav><a href="#services">Услуги</a><a href="#masters">Мастера</a><a href="#works">Работы</a><a href="#reviews">Отзывы</a><a href="#way">Адрес</a></nav>
+  <a class="btn" href="#book">Записаться</a>
+ </div>
+</header>
+
+<main id="top">
+
+<!-- 1. Первый экран -->
+<section class="hero">
+ <div class="wrap">
+  <h1>RUTARI</h1>
+  <div class="top">
+   <p class="where">Мужской барбершоп<span>Усть-Каменогорск, Оралхан Бокей, 21<br>Ежедневно 10:00–18:00</span></p>
+  </div>
+  <div class="buy">
+   <div class="price"><small>Мужская стрижка</small>от 4 000 ₸</div>
+   <a class="btn accent" href="#book">Записаться</a>
+  </div>
+ </div>
+</section>
+
+<!-- 2. Услуги. ЦЕНЫ И ВРЕМЯ — ЗАГЛУШКИ, заменить на реальные -->
+<section id="services">
+ <div class="wrap">
+  <h2>Услуги</h2>
+  <p class="lead">Время указано с учётом консультации. Точную цену мастер называет до начала.</p>
+  <div>
+   <div class="row"><b>Мужская стрижка</b><span class="t">60 мин</span><span class="p">4 000 ₸</span></div>
+   <div class="row"><b>Фейд</b><span class="t">60 мин</span><span class="p">4 500 ₸</span></div>
+   <div class="row"><b>Стрижка машинкой</b><span class="t">30 мин</span><span class="p">2 500 ₸</span></div>
+   <div class="row"><b>Борода</b><span class="t">30 мин</span><span class="p">2 500 ₸</span></div>
+   <div class="row"><b>Стрижка и борода</b><span class="t">90 мин</span><span class="p">6 000 ₸</span></div>
+   <div class="row"><b>Королевское бритьё</b><span class="t">45 мин</span><span class="p">3 500 ₸</span></div>
+  </div>
+ </div>
+</section>
+
+<!-- 3. Мастера. ИМЕНА ВЫДУМАНЫ, фото — заглушки: положить портреты в images/master-1.jpg и т.д. и заменить блок .ph на <img> -->
+<section id="masters">
+ <div class="wrap">
+  <h2>Мастера</h2>
+  <p class="lead">Выберите, к кому идти. Нажмите «Записаться», и мастер выберется в форме ниже.</p>
+  <div class="masters">
+   <article class="m"><div class="ph" aria-hidden="true">Р</div><h3>Ренат</h3><p>Фейды и короткие стрижки. Стаж 7 лет.</p><a class="btn ghost" href="#book" data-master="Ренат">Записаться к Ренату</a></article>
+   <article class="m"><div class="ph" aria-hidden="true">Д</div><h3>Данияр</h3><p>Классика и работа ножницами. Стаж 5 лет.</p><a class="btn ghost" href="#book" data-master="Данияр">Записаться к Данияру</a></article>
+   <article class="m"><div class="ph" aria-hidden="true">А</div><h3>Артём</h3><p>Борода и бритьё. Стаж 4 года.</p><a class="btn ghost" href="#book" data-master="Артём">Записаться к Артёму</a></article>
+  </div>
+ </div>
+</section>
+
+<!-- 4. Работы: 5 фото; work-6.jpg используется фоном первого экрана -->
+<section id="works">
+ <div class="wrap">
+  <h2>Работы</h2>
+  <p class="lead">Так выглядит результат: чистый переход, живая текстура сверху.</p>
+  <div class="grid">
+   <img src="images/work-1.jpg" alt="Короткая стрижка с фейдом, текстура сверху" loading="lazy" width="478" height="538">
+   <img src="images/work-2.jpg" alt="Текстурная чёлка, вид сверху" loading="lazy" width="478" height="538">
+   <img src="images/work-3.jpg" alt="Мастер делает переход машинкой за ухом" loading="lazy" width="478" height="538">
+   <img src="images/work-4.jpg" alt="Стрижка с высоким фейдом, вид сбоку" loading="lazy" width="478" height="538">
+   <img src="images/work-5.jpg" alt="Фейд и текстура, профиль" loading="lazy" width="478" height="538">
+  </div>
+ </div>
+</section>
+
+<!-- 5. Отзывы. ТЕКСТЫ ВЫДУМАНЫ. Заменить настоящими до запуска и убрать .draft -->
+<section id="reviews">
+ <div class="wrap">
+  <h2>Отзывы</h2>
+  <p class="lead">Что говорят те, кто уже сидел в кресле.</p>
+  <div class="rev">
+   <blockquote>Пришёл с фото из интернета, ушёл ровно с такой же стрижкой. Фейд чистый, на второй неделе всё ещё держит форму.<cite>Алексей, ходит полгода</cite></blockquote>
+   <blockquote>Нет суеты и очередей: записался на конкретное время, пришёл ровно к нему. Мастер объяснил, как укладывать дома.<cite>Тимур, ходит третий месяц</cite></blockquote>
+   <blockquote>Подровняли бороду и подобрали форму под лицо. Раньше сам такого не добивался.<cite>Максим, был дважды</cite></blockquote>
+   <blockquote>Взял сына, справились быстро и без нервов. Теперь ходим вдвоём.<cite>Ержан, ходит с сыном</cite></blockquote>
+  </div>
+  <p class="draft">Черновик: отзывы выдуманы, заменить настоящими до запуска.</p>
+  <a class="btn ghost more" href="https://yandex.kz/maps/?text=Усть-Каменогорск%2C%20Оралхан%20Бокей%2C%2021" target="_blank" rel="noopener">Отзывы на Яндекс Картах</a>
+ </div>
+</section>
+
+<!-- 6. Как добраться -->
+<section class="way" id="way">
+ <div class="wrap">
+  <div>
+   <h2>Как добраться</h2>
+   <dl>
+    <div><dt>Адрес</dt><dd>Усть-Каменогорск,<br>Оралхан Бокей, 21</dd></div>
+    <div><dt>Часы работы</dt><dd>Ежедневно 10:00–18:00</dd></div>
+    <div><dt>Телефон</dt><dd><a href="tel:+77715770592">+7 771 577 05 92</a></dd></div>
+   </dl>
+   <div class="acts">
+    <a class="btn accent" href="https://yandex.kz/maps/?rtext=~Усть-Каменогорск%2C%20Оралхан%20Бокей%2C%2021&rtt=auto" target="_blank" rel="noopener">Построить маршрут</a>
+    <a class="btn ghost" href="https://yandex.kz/maps/?text=Усть-Каменогорск%2C%20Оралхан%20Бокей%2C%2021" target="_blank" rel="noopener">Открыть на Яндекс Картах</a>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- 7. Запись -->
+<section class="book" id="book">
+ <div class="wrap">
+  <div>
+   <h2>Запись</h2>
+   <p class="lead">Выберите мастера, оставьте имя и телефон. Перезвоним и подтвердим время.</p>
+  </div>
+  <div>
+   <form id="f" novalidate>
+    <label>Мастер<select name="master" id="master"><option>Любой свободный</option><option>Ренат</option><option>Данияр</option><option>Артём</option></select></label>
+    <label>Имя<input type="text" name="name" autocomplete="given-name" required maxlength="60"></label>
+    <label>Телефон<input type="tel" name="phone" autocomplete="tel" inputmode="tel" placeholder="+7" required maxlength="20"></label>
+    <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <label class="agree"><input type="checkbox" name="consent" required><span>Согласен на обработку персональных данных. <a href="privacy.html" target="_blank">Политика конфиденциальности</a></span></label>
+    <button class="btn accent" type="submit">Отправить заявку</button>
+    <p class="msg" id="msg" role="status" aria-live="polite"></p>
+   </form>
+   <p class="or">Или без формы:</p>
+   <a class="btn ghost" href="https://t.me/RUTARI" target="_blank" rel="noopener">Написать в Telegram</a>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer><div class="wrap">RUTARI · Усть-Каменогорск, Оралхан Бокей, 21 · <a href="privacy.html">Политика конфиденциальности</a></div></footer>
+
+<script>
+const f=document.getElementById('f'),msg=document.getElementById('msg');
+document.querySelectorAll('[data-master]').forEach(a=>a.addEventListener('click',()=>{f.master.value=a.dataset.master}));
+f.addEventListener('submit',async e=>{
+ e.preventDefault();
+ const d=Object.fromEntries(new FormData(f));
+ const show=(t,c)=>{msg.textContent=t;msg.className='msg '+c};
+ if(!d.name.trim()) return show('Введите имя.','err');
+ if(d.phone.replace(/\D/g,'').length<10) return show('Проверьте телефон: нужно минимум 10 цифр.','err');
+ if(!f.consent.checked) return show('Нужно согласие на обработку данных.','err');
+ const b=f.querySelector('button');b.disabled=true;show('Отправляем…','');
+ try{
+  const r=await fetch('/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:d.name,phone:d.phone,master:d.master,website:d.website})});
+  if(!r.ok) throw 0;
+  f.reset();show('Заявка отправлена. Перезвоним в ближайшее время.','ok');
+ }catch(_){show('Не удалось отправить. Напишите в Telegram или позвоните: +7 771 577 05 92.','err')}
+ b.disabled=false;
+});
+</script>
+</body>
+</html>
